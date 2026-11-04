@@ -1,0 +1,17 @@
+* text=auto eol=lf
+
+# Windows scripts keep CRLF
+*.ps1 text eol=crlf
+*.cmd text eol=crlf
+*.bat text eol=crlf
+
+# Bank statement fixtures must stay byte-identical (encoding and line endings matter to parsers)
+*.ofx -text
+*.qfx -text
+*.csv -text
+
+# Binary
+*.pdf binary
+*.png binary
+*.jpg binary
+*.ico binary
