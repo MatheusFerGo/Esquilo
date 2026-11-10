@@ -1,0 +1,11 @@
+<Project>
+  <!-- Central Package Management: versions live here only. Projects reference packages without a Version attribute. -->
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Packages are added in increment 0.2 (backend skeleton). -->
+  </ItemGroup>
+</Project>
