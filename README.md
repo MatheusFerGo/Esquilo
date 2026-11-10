@@ -18,3 +18,13 @@ Personal finance app for the Brazilian market: automatic expense categorization,
 - Line endings are normalized to LF by `.gitattributes` (Windows scripts keep CRLF).
 - Code style and analyzer rules live in `.editorconfig` and are enforced at build time.
 - Real bank statements and personal data must never be committed. Use `samples/real/` folders, which are git-ignored, for local experiments only.
+
+## Getting started
+
+Prerequisites: Git and Node.js 20+ (used only for repository tooling).
+
+```bash
+npm install   # installs commitlint and husky and activates the git hooks
+```
+
+Every commit message must follow [Conventional Commits](https://www.conventionalcommits.org/): `type(scope): subject`.
