@@ -1,0 +1,46 @@
+name: pr-title
+
+# Squash merge turns the PR title into the commit on main,
+# so the title is what release-please reads. It must be a Conventional Commit.
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+permissions:
+  pull-requests: read
+
+jobs:
+  pr-title:
+    name: pr-title
+    runs-on: ubuntu-latest
+    steps:
+      - uses: amannn/action-semantic-pull-request@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          types: |
+            feat
+            fix
+            perf
+            refactor
+            test
+            docs
+            build
+            ci
+            chore
+            revert
+          # Keep in sync with commitlint.config.js
+          scopes: |
+            api
+            mobile
+            infra
+            docs
+            ci
+            deps
+            repo
+            adr
+            identity
+            imports
+          requireScope: false
+          subjectPattern: ^(?![A-Z]).+$
+          subjectPatternError: The subject "{subject}" must start with a lowercase letter.
